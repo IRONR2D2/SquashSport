@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Bienvenido!</title>
+    <title>Mi juego</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -16,101 +16,119 @@
     <!-- Custom styles for this template -->
     <link href="css/heroic-features.css" rel="stylesheet">
 
-  </head>
+    <link rel="stylesheet" href="css/style.css">
 
-  <body>
+</head>
+
+<body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">SQUASH</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-          </ul>
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Squash</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
+
     <!-- Page Content -->
     <div class="container">
 
-      <!-- Jumbotron Header -->
-      <header class="jumbotron my-4">
-        <h1 class="display-3">Squash</h1>
-        <p>¿Que es?</p>
-        <p class="lead"> s jugadores y una pelota de goma que puede tener distintos grados de velocidad o rebote. ... Los jugadores golpean la pelota con sus raquetas haciéndola rebotar en la pared frontal de la cancha<a href="https://es.wikipedia.org/wiki/Squash">Mas informacion</a></p>
-      </header>
-
-      <!-- Page Features -->
-      <div class="row text-center">
-
-        <div class="col-lg-3 col-md-3 mb-3">
-          <div class="card">
-            <img class="card-img-top" src="img/roca.jpg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">N-A</h4>
-              <p class="card-text">No definido</p>
+        <div class="row">
+            <div class="col-sm-8">
+                <h2 class="mt-4"></h2>
+                <div class="result">
+                    <p id="principal">Marcador</p> <!-- RECUERDA ESTA ES EL RESUTADO DEL PUNTO -->
+                </div>
             </div>
-          </div>
+            <div class="col-sm-4">
+                <div class="marcador">
+                    <div class="playerA-label badge">AA</div>
+                    <div class="playerB-label badge">B</div>
+
+                    <span id="playerA-score">0</span>
+                    <span id="playerB-score">0</span>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <br><br><br><br><br><br>
+        <div class="form-group col-md-12 my-12" align="text-center">
+            <button type="submit" class="btn btn-primary" id="R">⏎</button>
         </div>
 
-        <div class="col-lg-3 col-md-3 mb-3">
-          <div class="card">
-            <img class="card-img-top" src="img/Papel.jpg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">N-A</h4>
-              <p class="card-text">No definido</p>
+        <div class="row">
+
+            <div class="col-sm-6 my-6">
+                <div class="choice" id="A">
+                    <!-- r -->
+                    <img class="card-img-top" src="img/roca2.jpg" alt="">
+                </div>
             </div>
-          </div>
+
+            <div class="col-sm-6 my-6">
+                <div class="choice" id="B">
+                    <!-- p -->
+                    <img class="card-img-top" src="img/papel2.jpg" alt="">
+                </div>
+            </div>
         </div>
 
-        <div class="col-lg-3 col-md-3 mb-3">
-          <div class="card">
-            <img class="card-img-top" src="img/Tijera.jpeg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">N-A</h4>
-              <p class="card-text">No definido</p>
-            </div>
-          </div>
-        </div>
+        <div class="row">
 
-        <div class="col-lg-3 col-md-3 mb-3">
-          <div class="card">
-            <img class="card-img-top" src="img/todo.jpg" alt="">
-            <div class="card-body">
-              <h4 class="card-title">NUEVO JUEGO</h4>
-              <div class="card-footer">
-              <a href="formulario.html" class="btn btn-primary">Jugar</a>
+            <div class="col-sm-6 my-6">
+                <div id="noesun">
+                    <!-- r -->
+                    MARCADOR A
+                </div>
             </div>
+
+            <div class="col-sm-6 my-6">
+                <div id="noesun2">
+                    MARCADOR A
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <!-- /.row -->
+        <!-- /.row -->
+
     </div>
+
+    <br><br>
+    <p id="accion">A Jugar!!!</p>
+
     <!-- /.container -->
 
+
     <!-- Footer -->
+    <br><br><br><br><br><br><br>
     <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Juego de piedra papel o tijera</p>
-        <p class="m-2 text-center text-white">Gracias por visitar mi juego!</p>
-        
-      </div>
-      <!-- /.container -->
+        <div class="container">
+            <p class="m-0 text-center text-white"> &copy; Modificar</p>
+            <p class="m-2 text-center text-white">Gracias por visitar mi juego!</p>
+
+            <p id="demo"></p>
+
+        </div>
+        <!-- /.container -->
     </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
-  </body>
+    <!-- / . <script type="text/javascript" src="js/app.js"></script> -->
+    <script type="text/javascript" src="js/scoreLogic.js"></script>
+
+</body>
 
 </html>
