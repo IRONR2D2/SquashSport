@@ -1,11 +1,14 @@
 let contadorA = 0;
 let contadorB = 0;
+
+let backPoint = 0;
 // let limitePuntos=50; ESTA PARTE SOLO LA OCUPAREMOS CUNDO ESTE LISTO EL FORMULARIO
 
 //Obtenemos accion de los botones
 const botonA = document.getElementById('A');
 const botonB = document.getElementById('B');
 const botonR = document.getElementById('R');
+const botonPuntoRegreso = document.getElementById('puntoRegreso');
 
 
 //Tablero
@@ -25,10 +28,17 @@ function persona(punto) {
         if (punto == 'B') {
             return 2;//GREGAR BOTON NUEVA PARTIDA :D
         } else {
-            if (punto == 'R') {
+            if (punto == 'puntoRegreso') {
                 return 3;
+                
             } else {
-                return punto;
+                if (punto == 'R') {
+                    return 4;
+                    
+                } else {
+                    return punto;
+                    
+                }
             }
         }
     }
@@ -40,26 +50,46 @@ function tableros(completo) {
         contadorA++;
         marcadorA.innerHTML = contadorA;
         proceso.innerHTML = "Gano jugador 1 ";
-        
+        backPoint = 1;
+
     } else {
         if (persona(completo) == 2) {
             contadorB++;
             marcadorB.innerHTML = contadorB;
             proceso.innerHTML = "Gano jugador 2 ";
-            
+            backPoint = 2;
+
         } else {
-            contadorA = 0;
-            contadorB = 0;
-            marcadorA.innerHTML = contadorA;
-            marcadorB.innerHTML = contadorB;
-            proceso.innerHTML = "El juego se reinicia" ;
+            if (persona(completo) == 3) {
+                if (backPoint == 0) {
+                    console.log("AUN NO CONMIENZA EL JUEGO");
+                }else{
+                    if (backPoint == 1) {
+                        contadorA--;
+                        marcadorA.innerHTML = contadorA;
+                    }else{
+                        if (backPoint == 2) {
+                            contadorB--;
+                            marcadorB.innerHTML = contadorB;
+                        }
+                    }
+                }
+            } else {
+                contadorA = 0;
+                contadorB = 0;
+                backPoint = 0;
+                marcadorA.innerHTML = contadorA;
+                marcadorB.innerHTML = contadorB;
+                proceso.innerHTML = "El juego se reinicia";
+            }
         }
     }
+    //console.log(backPoint + "    HOLA :3");
 
 }
 
 function sideMatch(pos) {
-    
+
 }
 
 
@@ -79,6 +109,7 @@ function main() {
     botonA.addEventListener('click', () => game("A"));
     botonB.addEventListener('click', () => game("B"));
     botonR.addEventListener('click', () => game("R"));
+    botonPuntoRegreso.addEventListener('click', () => game("puntoRegreso"));
     //botonR.addEventListener('click', () => game("R"));
     /**botonA.addEventListener("click", function(){
     marcadorA.innerHTML = 1;});**/
