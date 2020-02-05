@@ -2,6 +2,7 @@ let contadorA = 0;
 let contadorB = 0;
 
 let backPoint = 0;
+let contadorlado = 0;
 // let limitePuntos=50; ESTA PARTE SOLO LA OCUPAREMOS CUNDO ESTE LISTO EL FORMULARIO
 
 //Obtenemos accion de los botones
@@ -30,14 +31,14 @@ function persona(punto) {
         } else {
             if (punto == 'puntoRegreso') {
                 return 3;
-                
+
             } else {
                 if (punto == 'R') {
                     return 4;
-                    
+
                 } else {
                     return punto;
-                    
+
                 }
             }
         }
@@ -63,14 +64,16 @@ function tableros(completo) {
             if (persona(completo) == 3) {
                 if (backPoint == 0) {
                     console.log("AUN NO CONMIENZA EL JUEGO");
-                }else{
-                    if (backPoint == 1) {
+                } else {
+                    if (backPoint == 1 && backPoint != 0) {
                         contadorA--;
                         marcadorA.innerHTML = contadorA;
-                    }else{
-                        if (backPoint == 2) {
+                    } else {
+                        if (backPoint == 2 && backPoint != 0) {
                             contadorB--;
                             marcadorB.innerHTML = contadorB;
+                        } else {
+                            console.log("EL MARCADOR LLEGO A SU FIN");
                         }
                     }
                 }
@@ -89,8 +92,16 @@ function tableros(completo) {
 }
 
 function sideMatch(pos) {
-
+    if (contadorlado == 0) {
+        if (contadorA > 0) {
+            proceso.innerHTML = "Jugador 1 Entrando";
+        }
+        if (contadorB > 0) {
+            proceso.innerHTML = "Jugador 2 entrando ";
+        }
+    }
 }
+
 
 
 
@@ -100,6 +111,7 @@ function game(punto) {
 
     const movidaUser = punto;
     tableros(movidaUser);
+    sideMatch(movidaUser);
     // mostrarMarcdorA(movidaUser);
     // mostrarMarcdorB(movidaUser);
     // reiniciarMarcador(movidaUser);
