@@ -20,8 +20,6 @@ const mined = document.getElementById('noesun');
 const mined2 = document.getElementById('noesun2');
 
 
-
-
 function persona(punto) {
     if (punto == 'A') {
         return 1;//GREGAR BOTON NUEVA PARTIDA :D
@@ -101,10 +99,6 @@ function sideMatch(pos) {
         }
     }
 }
-
-
-
-
 
 
 function game(punto) {
