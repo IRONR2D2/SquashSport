@@ -9,7 +9,8 @@ let contadorlado = 0;
 const botonA = document.getElementById('A');
 const botonB = document.getElementById('B');
 const botonR = document.getElementById('R');
-const botonPuntoRegreso = document.getElementById('puntoRegreso');
+const botonpuntoRegreso = document.getElementById('puntoRegreso');
+const botonM = document.getElementById('M');
 
 
 //Tablero
@@ -29,11 +30,11 @@ function persona(punto) {
         } else {
             if (punto == 'puntoRegreso') {
                 return 3;
-
+                
             } else {
                 if (punto == 'R') {
                     return 4;
-
+                    
                 } else {
                     return punto;
 
@@ -50,6 +51,7 @@ function tableros(completo) {
         marcadorA.innerHTML = contadorA;
         proceso.innerHTML = "Gano jugador 1 ";
         backPoint = 1;
+        
 
     } else {
         if (persona(completo) == 2) {
@@ -86,7 +88,7 @@ function tableros(completo) {
         }
     }
     //console.log(backPoint + "    HOLA :3");
-
+    console.log(persona(completo));
 }
 
 function sideMatch(pos) {
@@ -98,6 +100,7 @@ function sideMatch(pos) {
             proceso.innerHTML = "Jugador 2 entrando ";
         }
     }
+    
 }
 
 
@@ -115,7 +118,9 @@ function main() {
     botonA.addEventListener('click', () => game("A"));
     botonB.addEventListener('click', () => game("B"));
     botonR.addEventListener('click', () => game("R"));
-    botonPuntoRegreso.addEventListener('click', () => game("puntoRegreso"));
+    botonR.addEventListener('click', () => game("M"));
+    botonpuntoRegreso.addEventListener('click', () => game("puntoRegreso"));
+    
     //botonR.addEventListener('click', () => game("R"));
     /**botonA.addEventListener("click", function(){
     marcadorA.innerHTML = 1;});**/
